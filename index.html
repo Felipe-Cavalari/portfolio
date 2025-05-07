@@ -15,11 +15,6 @@
 
     <!-- Google Fonts-->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
     />
   </head>
 
@@ -28,7 +23,7 @@
     <header class="p-6 w-full flex justify-center fixed z-10" id="header">
       <!-- Desktop Menu -->
       <nav
-        class="hidden md:flex gap-10 text-lg border border-gray-500 px-10 py-4 rounded-full bg-[#283241]/40 backdrop-blur-xl shadow-xl"
+        class="hidden md:flex gap-10 text-lg border border-[#283241] px-10 py-4 rounded-3xl bg-[#283241]/40 backdrop-blur-xl shadow-xl"
       >
         <a href="#hero" class="hover:cursor-pointer">Home</a>
         <a href="#about" class="hover:cursor-pointer">Sobre</a>
@@ -78,7 +73,7 @@
         <p class="hidden pb-2" id="hero-arrow-title">Me conheça</p>
         <a href="#about">
           <i
-            class="fa-solid fa-arrow-down text-violet-600 shadow-black shadow-xl border border-black/10 p-2.5 rounded-lg text-xl hover:cursor-pointer"
+            class="fa-solid fa-arrow-down border border-[#283241] bg-[#283241]/40 backdrop-blur-xl shadow-black shadow-xl p-2.5 rounded-xl text-xl hover:cursor-pointer"
             id="hero-arrow-icon"
           ></i>
         </a>
@@ -98,21 +93,39 @@
     </section>
 
     <!-- Projects Section -->
-    <section class="py-20 px-6 bg-gray-800" id="projects">
+    <section class="py-20 px-6" id="projects">
       <div class="max-w-6xl mx-auto">
         <h3 class="text-3xl font-bold text-center mb-12">Projects</h3>
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class="grid md:grid-cols-3 gap-8">
           <!-- Project Card -->
-          <div class="bg-gray-700 p-6 rounded-xl hover:scale-105 transition">
-            <h4 class="text-2xl font-semibold mb-4">Project One</h4>
-            <p class="text-gray-400 mb-4">
-              Description of the project goes here. What technologies were used,
-              challenges, etc.
+          <div
+            class="flex flex-col gap-4 border border-[#283241] bg-[#283241]/40 backdrop-blur-xl shadow-xl p-6 rounded-xl hover:scale-105 transition"
+          >
+            <img
+              src="./assets/zenflow-landingPage-heroSection.png"
+              alt="Zenflow Productivity"
+              class="w-full h-auto rounded-t-xl object-cover"
+            />
+            <h4 class="text-2xl font-semibold mb-4">Zenflow Productivity</h4>
+
+            <p class="text-gray-400 mb-4 text-sm">
+              Landing page desenvolvida para o ZenFlow Productivity, focada em
+              conversão e experiência do usuário, com design moderno, linguagem
+              acolhedora e estrutura estratégica para apresentar os benefícios
+              do produto de forma clara e envolvente.
             </p>
-            <a href="#" class="text-indigo-400 hover:underline">View Project</a>
+            <a
+              href="https://zenflowproductivity.com/"
+              target="_blank"
+              class="text-indigo-400 hover:underline"
+              >View Project</a
+            >
           </div>
+
           <!-- Project Card -->
-          <div class="bg-gray-700 p-6 rounded-xl hover:scale-105 transition">
+          <div
+            class="border border-[#283241] bg-[#283241]/40 backdrop-blur-xl shadow-xl p-6 rounded-xl hover:scale-105 transition"
+          >
             <h4 class="text-2xl font-semibold mb-4">Project Two</h4>
             <p class="text-gray-400 mb-4">
               Another project description highlighting your skills and

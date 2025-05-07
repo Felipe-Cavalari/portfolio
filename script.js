@@ -2,19 +2,20 @@
 
 const text = "Software Developer.";
 const element = document.getElementById("typewriter");
-gsap.to(
-  {},
-  {
-    duration: 0.1,
-    repeat: text.length - 1,
-    repeatDelay: 0.03,
-    onRepeat: function () {
-      const currentLength = element.textContent.length;
-      element.textContent = text.slice(0, currentLength + 1);
-    },
-  }
-);
-
+setTimeout(() => {
+  gsap.to(
+    {},
+    {
+      duration: 0.1,
+      repeat: text.length - 1,
+      repeatDelay: 0.03,
+      onRepeat: function () {
+        const currentLength = element.textContent.length;
+        element.textContent = text.slice(0, currentLength + 1);
+      },
+    }
+  );
+}, 1000);
 // Animação de bouncing com GSAP no icone da Hero Secton
 const heroIcon = document.getElementById("hero-arrow-icon");
 
