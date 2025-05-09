@@ -86,51 +86,133 @@ document.addEventListener("DOMContentLoaded", () => {
 // Código para a section de Skills
 const skillsData = {
   frontend: [
-    { name: "HTML", class: "frontend-skill", icon: "🌐" },
-    { name: "CSS", class: "frontend-skill", icon: "🎨" },
-    { name: "JavaScript", class: "frontend-skill", icon: "⚡" },
-    { name: "React", class: "frontend-skill", icon: "⚛️" },
+    {
+      name: "HTML",
+      class: "frontend-skill",
+      icon: "/assets/svg/skills/HTML5.svg",
+    },
+    {
+      name: "CSS",
+      class: "frontend-skill",
+      icon: "/assets/svg/skills/CSS.svg",
+    },
+    {
+      name: "JavaScript",
+      class: "frontend-skill",
+      icon: "/assets/svg/skills/js.svg",
+    },
+    {
+      name: "Tailwind",
+      class: "frontend-skill",
+      icon: "/assets/svg/skills/tailwind.svg",
+    },
+    {
+      name: "React",
+      class: "frontend-skill",
+      icon: "/assets/svg/skills/react.svg",
+    },
+    {
+      name: "NextJs",
+      class: "frontend-skill",
+      icon: "/assets/svg/skills/nextjs.svg",
+    },
   ],
   backend: [
-    { name: "Python", class: "backend-skill", icon: "🐍" },
-    { name: "Node.js", class: "backend-skill", icon: "🟢" },
-    { name: "Django", class: "backend-skill", icon: "🧩" },
+    {
+      name: "Python",
+      class: "backend-skill",
+      icon: "/assets/svg/skills/python.svg",
+    },
+    {
+      name: "Node.js",
+      class: "backend-skill",
+      icon: "/assets/svg/skills/nodejs.svg",
+    },
+    {
+      name: "Express JS",
+      class: "backend-skill",
+      icon: "/assets/svg/skills/expressjs.svg",
+    },
+    {
+      name: "Fastify",
+      class: "backend-skill",
+      icon: "/assets/svg/skills/fastify.svg",
+    },
+    {
+      name: "NestJS",
+      class: "backend-skill",
+      icon: "/assets/svg/skills/nestjs.svg",
+    },
   ],
   mobile: [
-    { name: "Flutter", class: "mobile-skill", icon: "📱" },
-    { name: "React Native", class: "mobile-skill", icon: "📲" },
-    { name: "Swift", class: "mobile-skill", icon: "🍎" },
+    {
+      name: "Swift",
+      class: "mobile-skill",
+      icon: "/assets/svg/skills/swift.svg",
+    },
   ],
   ai: [
-    { name: "TensorFlow", class: "ai-skill", icon: "🧠" },
-    { name: "PyTorch", class: "ai-skill", icon: "🔥" },
-    { name: "Scikit-Learn", class: "ai-skill", icon: "📊" },
+    {
+      name: "OpenAI",
+      class: "ai-skill",
+      icon: "/assets/svg/skills/openAi.svg",
+    },
+    {
+      name: "Ollama",
+      class: "ai-skill",
+      icon: "/assets/svg/skills/ollama.svg",
+    },
+  ],
+  design: [
+    {
+      name: "Figma",
+      class: "design-skill",
+      icon: "/assets/svg/skills/figma.svg",
+    },
+    {
+      name: "CapCut",
+      class: "design-skill",
+      icon: "/assets/svg/skills/capcut.svg",
+    },
+    {
+      name: "Photoshop",
+      class: "design-skill",
+      icon: "/assets/svg/skills/photoshop.svg",
+    },
   ],
 };
 
-const skillsContainer = document.getElementById("skills-container");
 const categoryButtons = document.querySelectorAll(".category-btn");
+const skillsContainer = document.getElementById("skills-container");
 const mainTitle = document.getElementById("main-title");
 const subTitle = document.getElementById("sub-title");
 
 function renderSkills(category) {
+  // Atualizar visual do botão selecionado
+  categoryButtons.forEach((btn) => {
+    btn.classList.remove("bg-white/5", "text-[#3B82F6]", "font-bold");
+    if (btn.dataset.category === category) {
+      btn.classList.add("bg-white/5", "text-[#3B82F6]", "font-bold");
+    }
+  });
+
   // Limpar skills antigas
   skillsContainer.innerHTML = "";
 
   const skills = skillsData[category];
 
   skills.forEach((skill) => {
-    const a = document.createElement("a");
-    a.href = "#";
-    a.className = `skill-tag inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-800 font-medium rounded ${skill.class}`;
-    a.innerHTML = `<span>${skill.icon}</span> ${skill.name}`;
-    a.addEventListener("click", () => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `skill-tag flex flex-col items-center gap-2 hover:cursor-pointer `;
+    button.innerHTML = `<img src='${skill.icon}' class='w-24 hover:scale-105 transition' /> ${skill.name}`;
+    button.addEventListener("click", () => {
       mainTitle.textContent = `Você selecionou: ${skill.name}`;
       subTitle.textContent = `Categoria: ${
         category.charAt(0).toUpperCase() + category.slice(1)
       }`;
     });
-    skillsContainer.appendChild(a);
+    skillsContainer.appendChild(button);
   });
 
   // Animar entrada com GSAP
@@ -143,6 +225,14 @@ function renderSkills(category) {
   });
 }
 
+// Listener para botões de categoria
+categoryButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const selectedCategory = btn.dataset.category;
+    renderSkills(selectedCategory);
+  });
+});
+
 categoryButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     const category = btn.dataset.category;
@@ -151,3 +241,28 @@ categoryButtons.forEach((btn) => {
 });
 
 renderSkills("frontend");
+
+// Efeito de blur no mouse
+const spotlight = document.querySelector(".blur-spotlight");
+
+document.addEventListener("mousemove", (e) => {
+  spotlight.style.top = `${e.clientY}px`;
+  spotlight.style.left = `${e.clientX}px`;
+});
+
+const menuCheckbox = document.getElementById("menu-checkbox");
+const menu = document.getElementById("mobile-menu");
+
+function toggleMenu() {
+  menuCheckbox.checked = false;
+  menu.classList.add("-translate-y-full");
+}
+
+// Mostrar ou esconder o menu com base no checkbox
+menuCheckbox.addEventListener("change", () => {
+  if (menuCheckbox.checked) {
+    menu.classList.remove("-translate-y-full");
+  } else {
+    menu.classList.add("-translate-y-full");
+  }
+});
