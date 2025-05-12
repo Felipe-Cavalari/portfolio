@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Developer Portfolio</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
     <link rel="stylesheet" href="./styles.css" />
 
     <!-- Font Awesome (Ícones) -->
@@ -18,7 +19,9 @@
     
   </head>
 
-  <body class="bg-[#0F172A] text-white font-sans">
+  <body class="bg-[#0F172A] text-white font-sans" >
+
+ 
 
     <!-- Navbar -->
     <header class="p-3 w-full flex justify-center fixed z-10" id="header">
@@ -173,7 +176,7 @@
     
 
     <!-- Projects Section -->
-    <section class="py-20 px-6 h-screen bg-[#10192e]" id="projects">
+    <section class="py-20 px-6 h-auto md:h-screen bg-[#10192e]" id="projects">
       <div class="max-w-6xl mx-auto">
         <h1 class="text-5xl md:text-6xl font-bold text-[#3B82F6] pb-10 text-center font-futurism">Projetos</h1>
         <div class="grid md:grid-cols-3 gap-8">
@@ -278,8 +281,12 @@
       © 2025 Felipe Cavalari. All rights reserved.
     </footer>
 
+
     <!-- GSAP Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Barba JS import (Transição de Paginas) -->
+    <script src="https://unpkg.com/@barba/core"></script>
     <script src="script.js"></script>
+
   </body>
 </html>
