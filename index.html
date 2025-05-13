@@ -14,9 +14,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <!-- Google Fonts-->
-
-    
   </head>
 
   <body class="bg-[#0F172A] text-white font-sans" >
@@ -62,11 +59,13 @@
 
     <!-- Hero Section -->
     <section
-      class="min-h-screen flex flex-col justify-center items-center text-center px-4 relative"
+      class="min-h-screen flex flex-col justify-center items-center text-center px-4 relative opacity-0"
       id="hero"
     >
-    
-      <h2 class="font-sf text-3xl md:text-7xl font-bold mb-4 flex flex-col font-futurism md:z-10">
+      <img src="/assets/avatar-hero-1.png" alt="avatar-heroSecton" 
+      class="avatar-hero w-52 rounded-full z-0 opacity-60" 
+      id="avatar-hero">
+      <h2 class="hero-title font-sf text-3xl md:text-7xl font-bold mb-4 flex flex-col font-futurism md:z-10" >
         Felipe Cavalari
         <span class="text-[#3B82F6] text-xl md:text-4xl pt-3" id="typewriter"></span>
       </h2>
@@ -82,12 +81,10 @@
            id="hero-arrow-icon"></i>
         </a>
       </div>
-      <img src="/assets/avatar-hero-1.png" alt="avatar-heroSecton" 
-      class="w-52 rounded-full top-32 md:top-[350px] md:left-[300px] lg:left-[350px] absolute z-0 opacity-60">
     </section>
 
     <!-- About Section -->
-    <section class="py-20 px-6 h-auto w-full mb-40 bg-[#10192e]" id="about">
+    <section class="py-20 px-6 h-auto w-full mb-40 bg-[#10192e] opacity-0" id="about">
       <div class="flex flex-col items-center justify-center max-w-6xl mx-auto">
         <h1 class="text-5xl md:text-6xl font-bold text-[#3B82F6] pb-10 font-futurism ">Sobre mim</h1>
         <div class="flex flex-col md:flex-row justify-between w-full gap-10">
@@ -100,7 +97,7 @@
     
     Com visão de produto, atenção ao detalhe e pensamento estratégico, desenvolvo experiências digitais que equilibram estética, propósito e eficiência — do código à entrega final.
             </p>
-            <ul class="space-y-4 text-sm" id="">
+            <ul class="about-listspace-y-4 text-sm">
               <li class="flex items-center justify-start space-x-3">
                 <i class="fa-solid fa-code text-[#3B82F6] text-lg mt-1"></i>
                 <span>
@@ -144,7 +141,7 @@
 
 
     <!-- Skills Section -->
-    <section class="py-20 px-6 h-auto mb-40" id="skills">
+    <section class="py-20 px-6 h-auto mb-40 opacity-0" id="skills">
       <div class="max-w-6xl mx-auto">
         <h1 class="text-5xl md:text-6xl font-bold text-[#3B82F6] pb-10 text-center font-futurism">Skills</h1>
         <div class="flex flex-col md:flex-row gap-6">
@@ -176,7 +173,7 @@
     
 
     <!-- Projects Section -->
-    <section class="py-20 px-6 h-auto md:h-screen bg-[#10192e]" id="projects">
+    <section class="py-20 px-6 h-auto md:h-screen bg-[#10192e] opacity-0" id="projects">
       <div class="max-w-6xl mx-auto">
         <h1 class="text-5xl md:text-6xl font-bold text-[#3B82F6] pb-10 text-center font-futurism">Projetos</h1>
         <div class="grid md:grid-cols-3 gap-8">
@@ -259,7 +256,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="py-20 px-6 mb-20" id="contact">
+    <section class="py-20 px-6 mb-20 opacity-0" id="contact">
       <div class="max-w-4xl mx-auto text-center ">
         <h3 class="text-3xl font-bold mb-6">Entre em Contato</h3>
         <p class="text-gray-400 mb-8">
@@ -284,9 +281,15 @@
 
     <!-- GSAP Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <!-- Barba JS import (Transição de Paginas) -->
-    <script src="https://unpkg.com/@barba/core"></script>
-    <script src="script.js"></script>
+
+    <!-- Importando js principal -->
+    <script src="./script.js"></script>
+
+    
+    
+
+
+  
 
   </body>
 </html>
