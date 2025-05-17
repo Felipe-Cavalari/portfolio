@@ -74,9 +74,8 @@ const observer = new IntersectionObserver(
 
           gsap.to(target, {
             opacity: 1,
-            duration: 0.5,
-            stagger: 0.2,
-            ease: "power2.in",
+            duration: 0.3,
+            ease: "power3.in",
           });
         }
       }
