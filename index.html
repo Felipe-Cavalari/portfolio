@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="pt-BR" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,310 +10,365 @@
     <link rel="canonical" href="https://felipecavalari.com.br/">
 
     <!-- Open Graph (para compartilhamento em redes sociais) -->
-    <meta property="og:title" content="Seu Nome | Desenvolvedor Full Stack & Criador de Soluções Digitais">
+    <meta property="og:title" content="Felipe Cavalari | Desenvolvedor Full Stack & Criador de Soluções Digitais">
     <meta property="og:description" content="Conheça o portfólio de um desenvolvedor versátil, com foco em soluções modernas em web, mobile e IA.">
     <meta property="og:image" content="./assets/websitePreview.png">
     <meta property="og:url" content="https://felipecavalari.com.br/">
     <meta property="og:type" content="website">
 
-    <!-- Twitter Cards (para compartilhamento no Twitter) -->
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Felipe Cavalari | Desenvolvedor de Software">
     <meta name="twitter:description" content="Portfólio com projetos modernos em React, Node, SwiftUI, IA e mais. Confira e entre em contato!">
     <meta name="twitter:image" content="./assets/websitePreview.png">
+    
     <!-- Ícone do site -->
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
 
-
-    <!-- Link do tailwind -->
+    <!-- Tailwind CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="./styles.css" />
 
     <!-- Font Awesome (Ícones) -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
 
-  <body class="bg-[#0F172A] text-white font-sans" >
-
- 
+  <body>
+    <!-- Mouse Spotlight Effect -->
+    <div class="blur-spotlight"></div>
 
     <!-- Navbar -->
-    <header class="p-3 w-full flex justify-center fixed z-10" id="header">
-      <div class="blur-spotlight"></div>
-      <!-- Desktop Menu -->
-      <nav
-        class="hidden md:flex gap-10 text-lg border border-[#283241] px-1 py-1 rounded-3xl bg-[#283241]/40 backdrop-blur-xl shadow-xl"
-        id="web-navbar"
-        >
-        <a href="#hero" class="hover:cursor-pointer hover:bg-[#3B82F6] px-10 py-3 rounded-3xl">Home</a>
-        <a href="#about" class="hover:cursor-pointer hover:bg-[#3B82F6] px-10 py-3 rounded-3xl">Sobre</a>
-        <a href="#skills" class="hover:cursor-pointer hover:bg-[#3B82F6] px-10 py-3 rounded-3xl">Skills</a>
-        <a href="#projects" class="hover:cursor-pointer hover:bg-[#3B82F6] px-10 py-3 rounded-3xl">Projetos</a>
-        <a href="#contact" class="hover:cursor-pointer hover:bg-[#3B82F6] px-10 py-3 rounded-3xl">Contato</a>
-      </nav>
+    <header class="navbar" id="navbar">
+      <div class="navbar-container">
+        <a href="#hero" class="navbar-logo">FC /&gt;</a>
+        
+        <!-- Desktop Menu -->
+        <nav class="navbar-links" id="web-navbar">
+          <a href="#hero" class="active">Home</a>
+          <a href="#about">Sobre</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projetos</a>
+          <a href="#contact">Contato</a>
+        </nav>
 
-      <!-- Botão hambúrguer animado com peer -->
-    <label id="mobile-menu-toggle" class="md:hidden fixed top-6 right-6 z-50">
-      <div class="w-9 h-10 cursor-pointer flex flex-col items-center justify-center">
-        <input id="menu-checkbox" class="hidden peer" type="checkbox" title="Abrir menu" />
-        <div class="w-[50%] h-[2px] bg-white rounded-sm transition-all duration-300 origin-left translate-y-[0.45rem] peer-checked:rotate-[-45deg]"></div>
-        <div class="w-[50%] h-[2px] bg-white rounded-md transition-all duration-300 origin-center peer-checked:hidden"></div>
-        <div class="w-[50%] h-[2px] bg-white rounded-md transition-all duration-300 origin-left -translate-y-[0.45rem] peer-checked:rotate-[45deg]"></div>
+        <!-- Mobile Menu Toggle -->
+        <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
-    </label>
-
-<!-- Navbar mobile -->
-<nav id="mobile-menu"
-     class="md:hidden fixed top-0 left-0 w-full h-screen bg-[#0f0f0f]/90 backdrop-blur-xl z-10 flex flex-col items-center justify-center gap-10 text-xl text-white font-medium transform -translate-y-full transition-transform duration-300">
-  <a href="#hero" class="hover:text-[#3B82F6]" onclick="toggleMenu()">Home</a>
-  <a href="#about" class="hover:text-[#3B82F6]" onclick="toggleMenu()">Sobre</a>
-  <a href="#skills" class="hover:text-[#3B82F6]" onclick="toggleMenu()">Skills</a>
-  <a href="#projects" class="hover:text-[#3B82F6]" onclick="toggleMenu()">Projetos</a>
-  <a href="#contact" class="hover:text-[#3B82F6]" onclick="toggleMenu()">Contato</a>
-</nav>
-
     </header>
 
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu" id="mobile-menu">
+      <a href="#hero" onclick="closeMobileMenu()">Home</a>
+      <a href="#about" onclick="closeMobileMenu()">Sobre</a>
+      <a href="#skills" onclick="closeMobileMenu()">Skills</a>
+      <a href="#projects" onclick="closeMobileMenu()">Projetos</a>
+      <a href="#contact" onclick="closeMobileMenu()">Contato</a>
+    </nav>
+
     <!-- Hero Section -->
-    <section
-      class="min-h-screen flex flex-col justify-center items-center text-center px-4 relative opacity-0"
-      id="hero"
-    >
-      <img src="/assets/avatar-hero-1.png" alt="avatar-heroSecton" 
-      class="avatar-hero w-52 rounded-full z-0 opacity-60" 
-      id="avatar-hero">
-      <h2 class="hero-title font-sf text-3xl md:text-7xl font-bold mb-4 flex flex-col font-futurism md:z-10" >
-        Felipe Cavalari
-        <span class="text-[#3B82F6] text-xl md:text-4xl pt-3" id="typewriter"></span>
-      </h2>
-      <div class="absolute bottom-20">
-        <p class="hidden pb-2" id="hero-arrow-title">Role para conhecer</p>
-        <a href="#about">
-          <!-- <i
-            class="fa-solid fa-arrow-down border border-[#283241] bg-[#283241]/40 backdrop-blur-xl shadow-black shadow-xl p-2.5 rounded-xl text-xl hover:cursor-pointer"
-            id="hero-arrow-icon"
-          ></i> -->
-          <i class="fa-solid fa-computer-mouse border border-[#283241] bg-[#283241]/40 backdrop-blur-xl
-           shadow-black shadow-xl p-2.5 rounded-xl text-xl hover:cursor-pointer"
-           id="hero-arrow-icon"></i>
-        </a>
+    <section class="hero" id="hero">
+      <div class="hero-mesh"></div>
+      
+      <div class="hero-container">
+        <!-- Hero Image -->
+        <div class="hero-image-wrapper">
+          <img src="./assets/avatar-hero-1.png" alt="Felipe Cavalari" class="hero-image">
+        </div>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            Disponível para oportunidades
+          </div>
+          
+          <h1 class="hero-title font-futurism">Felipe Cavalari</h1>
+          <div class="hero-subtitle" id="typewriter"></div>
+          
+          <p class="hero-description">
+            Desenvolvedor Full Stack que une tecnologia, design e estratégia para criar produtos digitais funcionais, bonitos e centrados no usuário.
+          </p>
+
+          <div class="hero-social">
+            <a href="https://github.com/felipe-cavalari" target="_blank" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/felipe-cavalari" target="_blank" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:contato@felipecavalari.com.br" title="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn-primary">
+              <i class="fa-solid fa-folder-open"></i>
+              Ver Projetos
+            </a>
+            <a href="#contact" class="btn-secondary">
+              <i class="fa-solid fa-paper-plane"></i>
+              Entre em Contato
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <span>Role para conhecer</span>
+        <i class="fa-solid fa-chevron-down"></i>
       </div>
     </section>
 
     <!-- About Section -->
-    <section class="py-20 px-6 h-auto md:h-screen w-full mb-40 bg-[#10192e] opacity-0" id="about">
-      <div class="flex flex-col items-center justify-center max-w-6xl mx-auto">
-        <h1 class="text-5xl md:text-6xl font-bold text-[#3B82F6] pb-10 font-futurism ">Sobre mim</h1>
-        <div class="flex flex-col md:flex-row justify-between w-full gap-10">
-          <div class="flex items-center">
-            <img src="./assets/avatar-about.png" alt="" class="md:w-[570px] md:h-[350px] rounded-lg shadow-lg border border-[#1E293B]" >
-          </div>
-          <div class="space-y-10">
-            <p class="text-[#F1F5F9] text-sm md:text-lg max-w-2xl text-justify">
-              Sou um desenvolvedor que une tecnologia, design e estratégia para criar produtos digitais funcionais, bonitos e centrados no usuário. Tenho experiência com HTML, CSS, JavaScript, frameworks modernos e Notion, sempre focando em soluções que geram valor real e melhoram a vida das pessoas.
-    
-    Com visão de produto, atenção ao detalhe e pensamento estratégico, desenvolvo experiências digitais que equilibram estética, propósito e eficiência — do código à entrega final.
-            </p>
-           <ul class="about-list space-y-4 text-sm flex flex-col items-start justify-center">
-              <li class="flex items-center space-x-3">
-                <i class="fa-solid fa-code text-[#3B82F6] text-lg"></i>
-                <span>
-                  <strong class="text-[#3B82F6]">Front-End:</strong>
-                  <span class="text-[#CBD5E1]">HTML, CSS, JavaScript, Tailwind, React, Next.js, Nest.js</span>
-                </span>
-              </li>
-              <li class="flex items-center space-x-3">
-                <i class="fa-solid fa-server text-[#3B82F6] text-lg"></i>
-                <span>
-                  <strong class="text-[#3B82F6]">Back-End:</strong>
-                  <span class="text-[#CBD5E1]">Node.js, Express, SQL, NoSQL, Python, Jupyter</span>
-                </span>
-              </li>
-              <li class="flex items-center space-x-3">
-                <i class="fa-solid fa-mobile-screen-button text-[#3B82F6] text-lg"></i>
-                <span>
-                  <strong class="text-[#3B82F6]">Mobile:</strong>
-                  <span class="text-[#CBD5E1]">SwiftUI</span>
-                </span>
-              </li>
-              <li class="flex items-center space-x-3">
-                <i class="fa-solid fa-paintbrush text-[#3B82F6] text-lg"></i>
-                <span>
-                  <strong class="text-[#3B82F6]">UI/UX:</strong>
-                  <span class="text-[#CBD5E1]">Figma</span>
-                </span>
-              </li>
-              <li class="flex items-center space-x-3">
-                <i class="fa-solid fa-robot text-[#3B82F6] text-lg"></i>
-                <span>
-                  <strong class="text-[#3B82F6]">Ferramentas de IA:</strong>
-                  <span class="text-[#CBD5E1]">OpenAI Platform, Ollama, Cognigy AI, Engenharia de Prompt</span>
-                </span>
-              </li>
-      </ul>
+    <section class="section section-alt fade-in" id="about">
+      <div class="section-container">
+        <div class="section-header">
+          <h2 class="section-title font-futurism">Sobre Mim</h2>
+          <p class="section-subtitle">Conheça um pouco mais sobre minha jornada e expertise</p>
+        </div>
 
+        <div class="about-grid">
+          <!-- Code Window -->
+          <div class="code-window">
+            <div class="code-window-header">
+              <span class="code-window-dot red"></span>
+              <span class="code-window-dot yellow"></span>
+              <span class="code-window-dot green"></span>
+              <span class="code-window-title">about-me.js</span>
+            </div>
+            <div class="code-window-body">
+              <div class="code-line">
+                <span class="code-line-number">1</span>
+                <span><span class="code-keyword">const</span> <span class="code-property">developer</span> = {</span>
+              </div>
+              <div class="code-line">
+                <span class="code-line-number">2</span>
+                <span>&nbsp;&nbsp;name: <span class="code-string">"Felipe Cavalari"</span>,</span>
+              </div>
+              <div class="code-line">
+                <span class="code-line-number">3</span>
+                <span>&nbsp;&nbsp;role: <span class="code-string">"Full Stack Developer"</span>,</span>
+              </div>
+              <div class="code-line">
+                <span class="code-line-number">4</span>
+                <span>&nbsp;&nbsp;location: <span class="code-string">"Brasil"</span>,</span>
+              </div>
+              <div class="code-line">
+                <span class="code-line-number">5</span>
+                <span>&nbsp;&nbsp;skills: [<span class="code-string">"React"</span>, <span class="code-string">"Node"</span>, <span class="code-string">"IA"</span>],</span>
+              </div>
+              <div class="code-line">
+                <span class="code-line-number">6</span>
+                <span>&nbsp;&nbsp;available: <span class="code-keyword">true</span>,</span>
+              </div>
+              <div class="code-line">
+                <span class="code-line-number">7</span>
+                <span>};</span>
+              </div>
+            </div>
           </div>
-      </div>
+
+          <!-- About Content -->
+          <div class="about-content">
+            <p class="about-text">
+              Sou um desenvolvedor que une tecnologia, design e estratégia para criar produtos digitais funcionais, bonitos e centrados no usuário. Tenho experiência com HTML, CSS, JavaScript, frameworks modernos e Notion, sempre focando em soluções que geram valor real e melhoram a vida das pessoas.
+            </p>
+            <p class="about-text">
+              Com visão de produto, atenção ao detalhe e pensamento estratégico, desenvolvo experiências digitais que equilibram estética, propósito e eficiência — do código à entrega final.
+            </p>
+
+            <!-- Expertise Cards -->
+            <div class="expertise-cards">
+              <div class="expertise-card">
+                <i class="fa-solid fa-code"></i>
+                <h4>Front-End</h4>
+                <p>React, Next.js, Tailwind</p>
+              </div>
+              <div class="expertise-card">
+                <i class="fa-solid fa-server"></i>
+                <h4>Back-End</h4>
+                <p>Node.js, NestJS, Python</p>
+              </div>
+              <div class="expertise-card">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <h4>Mobile</h4>
+                <p>SwiftUI, iOS</p>
+              </div>
+              <div class="expertise-card">
+                <i class="fa-solid fa-robot"></i>
+                <h4>AI & Tools</h4>
+                <p>OpenAI, Ollama, Figma</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-
 
     <!-- Skills Section -->
-    <section class="py-20 px-6 h-auto md:h-screen  opacity-0" id="skills">
-      <div class="max-w-6xl mx-auto">
-        <h1 class="text-5xl md:text-6xl font-bold text-[#3B82F6] pb-10 text-center font-futurism">Skills</h1>
-        <div class="flex flex-col md:flex-row gap-6">
-          <!-- Lado Esquerdo -->
-          <div class="w-full md:w-1/3  p-6 ">
-            <h2 id="skill-main-title" class="text-2xl font-semibold mb-2 text-[#3B82F6]">Conhecimentos</h2>
-            <p id="sub-title" class=" mb-6 text-[#CBD5E1] text-sm">Clique no icone para saber mais</p>
-      
-            <div class="space-y-2">
-              <button class="category-btn text-left w-full px-4 py-2 rounded-lg shadow-lg border border-[#1E293B] hover:cursor-pointer hover:scale-105 transition hover:bg-white/5" data-category="frontend">Front-End</button>
-              <button class="category-btn text-left w-full px-4 py-2 rounded-lg shadow-lg border border-[#1E293B] hover:cursor-pointer hover:scale-105 transition hover:bg-white/5" data-category="backend">Back-End</button>
-              <button class="category-btn text-left w-full px-4 py-2 rounded-lg shadow-lg border border-[#1E293B] hover:cursor-pointer hover:scale-105 transition hover:bg-white/5" data-category="mobile">Mobile</button>
-              <button class="category-btn text-left w-full px-4 py-2 rounded-lg shadow-lg border border-[#1E293B] hover:cursor-pointer hover:scale-105 transition hover:bg-white/5" data-category="design">Design</button>
-              <button class="category-btn text-left w-full px-4 py-2 rounded-lg shadow-lg border border-[#1E293B] hover:cursor-pointer hover:scale-105 transition hover:bg-white/5" data-category="ai">AI</button>
-            </div>
-          </div>
-      
-          <!-- Lado Direito -->
-          <div class="w-full md:w-2/3  p-6">
-            <div id="skills-container" class="flex flex-wrap gap-4 items-center justify-center">
-              <!-- Tags dinâmicas vão aqui -->
-            </div>
+    <section class="section fade-in" id="skills">
+      <div class="section-container">
+        <div class="section-header">
+          <h2 class="section-title font-futurism">Skills</h2>
+          <p class="section-subtitle">Tecnologias e ferramentas que utilizo no dia a dia</p>
+        </div>
+
+        <!-- Marquee Row 1 -->
+        <div class="skills-marquee-container">
+          <div class="skills-marquee" id="marquee-1">
+            <!-- Skills will be injected via JS -->
           </div>
         </div>
-      
+
+        <!-- Marquee Row 2 (Reverse) -->
+        <div class="skills-marquee-container">
+          <div class="skills-marquee skills-marquee-reverse" id="marquee-2">
+            <!-- Skills will be injected via JS -->
+          </div>
         </div>
       </div>
     </section>
-    
 
     <!-- Projects Section -->
-    <section class="py-20 px-6 h-auto md:h-screen bg-[#10192e] opacity-0" id="projects">
-      <div class="max-w-6xl mx-auto">
-        <h1 class="text-5xl md:text-6xl font-bold text-[#3B82F6] pb-10 text-center font-futurism">Projetos</h1>
-        <div class="grid md:grid-cols-3 gap-8">
+    <section class="section section-alt fade-in" id="projects">
+      <div class="section-container">
+        <div class="section-header">
+          <h2 class="section-title font-futurism">Projetos</h2>
+          <p class="section-subtitle">Alguns dos meus trabalhos mais recentes</p>
+        </div>
 
-
-           <!-- Project Card Portfolio-->
-           <div class="bg-[#1e1e1e] max-w-sm border border-[#283241] bg-[#283241]/40 backdrop-blur-xl 
-           shadow-xl rounded-xl overflow-hidden hover:scale-105 transition">
-             <!-- Imagem ocupando toda a largura -->
-             <img src="./assets/felipe-cavalari-portfolio.png" alt="Meu Portfolio Screenshot" class="w-full h-48 object-cover" />
-           
-             <!-- Conteúdo abaixo da imagem -->
-             <div class="p-4">
-               <h2 class="text-[#3B82F6] text-xl font-semibold mb-2 text-center pb-3 ">Meu portfólio</h2>
-               <p class="text-gray-300 text-sm mb-10  max-w-2xl text-justify">
-                 Portfólio desenvolvido para apresentar meus projetos e habilidades, com design moderno, responsivo e otimizado para SEO. Utiliza HTML, CSS, JavaScript e Tailwind CSS para criar uma experiência de usuário fluida e envolvente.
-               </p>
-               <div class="flex justify-between absolute bottom-3">
-                 <a href="#" target="_blank" class="text-[#3B82F6] hover:underline text-center">Ver Projeto</a>
-                 
-               </div>
-             </div>
-           </div>
-         
-
-          <!-- Project Card Zenflow-->
-          <div class="bg-[#1e1e1e] max-w-sm border border-[#283241] bg-[#283241]/40 backdrop-blur-xl 
-          shadow-xl rounded-xl overflow-hidden hover:scale-105 transition">
-            <!-- Imagem ocupando toda a largura -->
-            <img src="./assets/zenflow-landingPage-heroSection.png" alt="ZenFlow Screenshot" class="w-full h-48 object-cover" />
-          
-            <!-- Conteúdo abaixo da imagem -->
-            <div class="p-4">
-              <h2 class="text-[#3B82F6] text-xl font-semibold mb-2 text-center pb-3 ">Zenflow Productivity</h2>
-              <p class="text-gray-300 text-sm mb-10  max-w-2xl text-justify">
-                Landing page desenvolvida para o ZenFlow Productivity, focada em conversão e experiência do usuário, com design moderno, linguagem acolhedora e estrutura estratégica para apresentar os benefícios do produto de forma clara e envolvente.
+        <div class="projects-grid">
+          <!-- Project Card 1: Portfolio -->
+          <div class="project-card">
+            <img src="./assets/felipe-cavalari-portfolio.png" alt="Meu Portfolio Screenshot" class="project-image" />
+            <div class="project-content">
+              <h3 class="project-title">Meu Portfólio</h3>
+              <p class="project-description">
+                Portfólio desenvolvido para apresentar meus projetos e habilidades, com design moderno, responsivo e otimizado para SEO.
               </p>
-              <div class="absolute bottom-3">
-                <a href="https://zenflowproductivity.com/" target="_blank" class="text-[#3B82F6] hover:underline text-center">Ver Projeto</a>
+              <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">Tailwind</span>
+              </div>
+              <div class="project-actions">
+                <a href="#" class="project-btn project-btn-primary">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  Ver Projeto
+                </a>
               </div>
             </div>
           </div>
 
-          <!-- Project Card Zenflow-->
-          <div class="bg-[#1e1e1e] max-w-sm border border-[#283241] bg-[#283241]/40 backdrop-blur-xl 
-          shadow-xl rounded-xl overflow-hidden hover:scale-105 transition">
-            <!-- Imagem ocupando toda a largura -->
-            <!-- <img src="" alt="Projeto em Andamento" class="w-full h-48 object-cover text-center" /> -->
-            <div class=" w-full h-48 object-cover flex items-center justify-center  border-b-1 border-[#283241]">
-            <!-- <div class="loader">
-              <span></span>
-            </div> -->
-            <div class="spinner">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            </div>
-
-            
-          
-            <!-- Conteúdo abaixo da imagem -->
-            <div class="p-4">
-              <h2 class="text-[#3B82F6] text-xl font-semibold mb-2 text-center pb-3 ">Projeto 3</h2>
-              <p class="text-gray-300 text-sm mb-10  max-w-2xl text-justify">
-                Em breve
+          <!-- Project Card 2: ZenFlow -->
+          <div class="project-card">
+            <img src="./assets/zenflow-landingPage-heroSection.png" alt="ZenFlow Screenshot" class="project-image" />
+            <div class="project-content">
+              <h3 class="project-title">ZenFlow Productivity</h3>
+              <p class="project-description">
+                Landing page focada em conversão e UX, com design moderno e estrutura estratégica para apresentar os benefícios do produto.
               </p>
-              <div class="absolute bottom-3">
-                <a href="#" target="_blank" class="text-[#3B82F6] cursor-not-allowed text-center ">Ver Projeto</a>
+              <div class="project-tags">
+                <span class="project-tag">React</span>
+                <span class="project-tag">Next.js</span>
+                <span class="project-tag">Tailwind</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://zenflowproductivity.com/" target="_blank" class="project-btn project-btn-primary">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  Ver Projeto
+                </a>
               </div>
             </div>
           </div>
 
-            
+          <!-- Project Card 3: Coming Soon -->
+          <div class="project-card">
+            <div class="project-image-placeholder">
+              <div class="spinner">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Em Breve</h3>
+              <p class="project-description">
+                Novo projeto em desenvolvimento. Fique ligado para mais novidades!
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">???</span>
+              </div>
+              <div class="project-actions">
+                <span class="project-btn project-btn-secondary" style="cursor: not-allowed; opacity: 0.5;">
+                  <i class="fa-solid fa-clock"></i>
+                  Em Breve
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="py-20 px-6 mb-20 opacity-0 h-auto md:h-screen flex flex-col items-center justify-center" id="contact">
-      <div class="max-w-4xl mx-auto text-center ">
-        <h3 class="text-3xl font-bold mb-6">Entre em Contato</h3>
-        <p class="text-gray-400 mb-8">
-          Fique a vontade para entrar em contato comigo para discutir projetos, colaborações ou qualquer dúvida que você tenha. Estou sempre aberto a novas oportunidades e desafios!
-        </p>
-        <div class="hover:scale-110 transition">
-          <a
-          href="/bio"
-          class="px-10 py-3 bg-[#3B82F6]  rounded-xl text-white font-semibold "
-          >Contato aqui!</a
-        >
+    <section class="section fade-in" id="contact">
+      <div class="section-container">
+        <div class="section-header">
+          <h2 class="section-title font-futurism">Contato</h2>
+          <p class="section-subtitle">Vamos construir algo incrível juntos?</p>
         </div>
-       
+
+        <div class="contact-container">
+          <p class="contact-description">
+            Fique à vontade para entrar em contato comigo para discutir projetos, colaborações ou qualquer dúvida. Estou sempre aberto a novas oportunidades e desafios!
+          </p>
+          
+          <a href="/bio" class="contact-btn">
+            <i class="fa-solid fa-paper-plane"></i>
+            Entre em Contato
+          </a>
+
+          <div class="contact-social">
+            <a href="https://github.com/felipe-cavalari" target="_blank" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/felipe-cavalari" target="_blank" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:contato@felipecavalari.com.br" title="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="https://twitter.com/felipe_cavalari" target="_blank" title="Twitter">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-6 text-center text-gray-500 text-sm">
-      © 2025 Felipe Cavalari. All rights reserved.
+    <footer class="footer">
+      <p>© 2025 Felipe Cavalari. Todos os direitos reservados.</p>
     </footer>
-
 
     <!-- GSAP Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-    <!-- Importando js principal -->
+    <!-- Main Script -->
     <script src="./script.js"></script>
-
-    
-    
-
-
-  
-
   </body>
 </html>
