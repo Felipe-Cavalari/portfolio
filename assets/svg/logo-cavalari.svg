@@ -1,0 +1,11 @@
+<svg width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="100" fill="none"/>
+  
+  <text x="10" y="65" font-family="Arial, sans-serif" font-weight="bold" font-size="35" fill="#333">
+    Cavalari
+    <tspan fill="#007bff">Dev</tspan>
+  </text>
+  
+  <path d="M10 80 L280 80" stroke="#007bff" stroke-width="3" stroke-linecap="round" opacity="0.3"/>
+  <path d="M245 50 L260 65 L245 80" fill="none" stroke="#007bff" stroke-width="4" stroke-linecap="round"/>
+</svg>
