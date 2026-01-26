@@ -1,0 +1,12 @@
+/* ============================================
+   Typography
+   ============================================ */
+
+/* Fonts */
+.font-futurism {
+  font-family: "futurism", sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}

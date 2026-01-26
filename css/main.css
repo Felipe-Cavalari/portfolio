@@ -1,0 +1,32 @@
+/* ============================================
+   Main CSS - Portfolio Felipe Cavalari
+   ============================================
+   Este arquivo importa todos os módulos CSS
+   organizados por responsabilidade.
+   ============================================ */
+
+/* Base */
+@import './base/variables.css';
+@import './base/reset.css';
+@import './base/typography.css';
+
+/* Components */
+@import './components/navbar.css';
+@import './components/buttons.css';
+@import './components/cards.css';
+@import './components/code-window.css';
+
+/* Sections */
+@import './sections/hero.css';
+@import './sections/about.css';
+@import './sections/skills.css';
+@import './sections/projects.css';
+@import './sections/contact.css';
+@import './sections/footer.css';
+
+/* Utilities */
+@import './utilities/animations.css';
+@import './utilities/responsive.css';
+
+/* Mobile Menu */
+@import './mobile-menu.css';
