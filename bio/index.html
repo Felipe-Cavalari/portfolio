@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" class="dark">
+<!doctype html>
+<html lang="pt-BR" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Felipe Cavalari | Bio Page</title>
-
-    <!-- Meta Tags -->
 
     <meta
       name="description"
@@ -18,7 +16,6 @@
     <meta name="author" content="Felipe Cavalari" />
     <link rel="canonical" href="https://felipecavalari.com.br/" />
 
-    <!-- Open Graph (para compartilhamento em redes sociais) -->
     <meta
       property="og:title"
       content="Seu Nome | Desenvolvedor Full Stack & Criador de Soluções Digitais"
@@ -27,11 +24,10 @@
       property="og:description"
       content="Conheça o portfólio de um desenvolvedor versátil, com foco em soluções modernas em web, mobile e IA."
     />
-    <meta property="og:image" content="./assets/websitePreview.png" />
+    <meta property="og:image" content="../assets/websitePreview.png" />
     <meta property="og:url" content="https://felipecavalari.com.br/" />
     <meta property="og:type" content="website" />
 
-    <!-- Twitter Cards (para compartilhamento no Twitter) -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
@@ -41,303 +37,410 @@
       name="twitter:description"
       content="Portfólio com projetos modernos em React, Node, SwiftUI, IA e mais. Confira e entre em contato!"
     />
-    <meta name="twitter:image" content="./assets/websitePreview.png" />
-    <!-- Ícone do site -->
+    <meta name="twitter:image" content="../assets/websitePreview.png" />
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              ink: "#0F172A",
+              night: "#10192e",
+              mist: "#CBD5E1",
+              glow: "#3B82F6",
+              wave: "#1C4485",
+            },
+            boxShadow: {
+              cinema: "0 24px 80px rgba(2, 8, 23, 0.55)",
+              soft: "0 12px 40px rgba(15, 23, 42, 0.42)",
+            },
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
+      :root {
+        color-scheme: dark;
+      }
+
       body {
-        background: linear-gradient(
-          315deg,
-          rgba(43, 57, 84) 3%,
-          rgba(24, 33, 53) 38%,
-          rgba(23, 31, 50) 68%
-        );
-        animation: gradient 15s ease infinite;
-        background-size: 400% 400%;
-        background-attachment: fixed;
+        min-height: 100vh;
+        background:
+          radial-gradient(
+            circle at 10% 15%,
+            rgba(59, 130, 246, 0.22),
+            transparent 44%
+          ),
+          radial-gradient(
+            circle at 85% 12%,
+            rgba(28, 68, 133, 0.3),
+            transparent 38%
+          ),
+          radial-gradient(
+            circle at 70% 84%,
+            rgba(56, 189, 248, 0.12),
+            transparent 42%
+          ),
+          linear-gradient(160deg, #0f172a 0%, #10192e 45%, #0f172a 100%);
+        background-size: 120% 120%;
+        animation: backgroundFlow 22s ease-in-out infinite;
       }
-      @keyframes gradient {
-        0% {
-          background-position: 0% 0%;
+
+      @keyframes backgroundFlow {
+        0%,
+        100% {
+          background-position:
+            0% 50%,
+            100% 50%,
+            50% 100%,
+            50% 50%;
         }
         50% {
-          background-position: 100% 100%;
-        }
-        100% {
-          background-position: 0% 0%;
+          background-position:
+            14% 42%,
+            90% 66%,
+            36% 82%,
+            50% 50%;
         }
       }
 
-      .wave {
-        background: rgb(28, 68, 133);
-        border-radius: 1000% 1000% 0 0;
+      .gaussian-orb {
         position: fixed;
-        width: 200%;
-        height: 12em;
-        animation: wave 10s -3s linear infinite;
-        transform: translate3d(0, 0, 0);
-        opacity: 0.8;
-        bottom: 0;
-        left: 0;
-        z-index: -1;
+        width: 28rem;
+        height: 28rem;
+        border-radius: 9999px;
+        filter: blur(60px);
+        opacity: 0.36;
+        z-index: 0;
+        pointer-events: none;
+        transform: translate3d(var(--tx, 0), var(--ty, 0), 0);
+        transition: transform 0.2s linear;
       }
 
-      .wave:nth-of-type(2) {
-        bottom: -1.25em;
-        animation: wave 18s linear reverse infinite;
-        opacity: 0.8;
+      .orb-a {
+        background: rgba(59, 130, 246, 0.62);
+        top: -8rem;
+        right: -8rem;
       }
 
-      .wave:nth-of-type(3) {
-        bottom: -2.5em;
-        animation: wave 20s -1s reverse infinite;
-        opacity: 0.9;
+      .orb-b {
+        background: rgba(28, 68, 133, 0.64);
+        bottom: -10rem;
+        left: -10rem;
       }
 
-      @keyframes wave {
-        2% {
-          transform: translateX(1);
-        }
-
-        25% {
-          transform: translateX(-25%);
-        }
-
-        50% {
-          transform: translateX(-50%);
-        }
-
-        75% {
-          transform: translateX(-25%);
-        }
-
-        100% {
-          transform: translateX(1);
-        }
+      .grain::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.2;
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.14) 0.45px,
+          transparent 0.45px
+        );
+        background-size: 3px 3px;
       }
 
-      .glass {
-        position: relative;
-        display: block;
-        color: inherit;
-        background: rgba(255, 255, 255, 0.08);
-        border-radius: 1rem; /* 2xl */
-        border: 1px solid rgba(255, 255, 255, 0.22);
-        border-right-color: rgba(255, 255, 255, 0.14);
-        border-bottom-color: rgba(255, 255, 255, 0.14);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25),
-          inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(12px) saturate(140%);
-        -webkit-backdrop-filter: blur(12px) saturate(140%);
-        transform: translateY(0);
+      .card-glass {
+        background: rgba(16, 25, 46, 0.48);
+        border: 1px solid rgba(203, 213, 225, 0.18);
+        box-shadow: 0 12px 42px rgba(2, 8, 23, 0.45);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
       }
 
-      /* Brilho/specular suave no topo */
-      .glass::before {
+      .card-glass::before {
         content: "";
         position: absolute;
         inset: 0;
         border-radius: inherit;
         background: linear-gradient(
-          to bottom,
-          rgba(255, 255, 255, 0.55),
-          rgba(255, 255, 255, 0.18) 25%,
-          rgba(255, 255, 255, 0) 60%
+          160deg,
+          rgba(255, 255, 255, 0.18),
+          rgba(255, 255, 255, 0) 45%
         );
-        opacity: 0.35;
         pointer-events: none;
       }
 
-      /* Realce interno e leve contorno */
-      .glass::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        box-shadow: inset 0 1px rgba(255, 255, 255, 0.45),
-          inset 0 0 0 1px rgba(255, 255, 255, 0.08);
-        mix-blend-mode: overlay;
-        pointer-events: none;
+      .reveal {
+        opacity: 0;
+        transform: translate3d(0, 16px, 0);
+        transition:
+          opacity 0.65s ease,
+          transform 0.65s ease;
       }
 
-      /* Hover/Active – sensação “floaty” */
-      .glass:hover {
-        background: rgba(255, 255, 255, 0.12);
-        transform: translateY(-1px);
-        box-shadow: 0 14px 36px rgba(0, 0, 0, 0.3),
-          inset 0 1px 0 rgba(255, 255, 255, 0.12);
-      }
-      .glass:active {
-        transform: translateY(0);
-        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28),
-          inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
       }
 
-      /* Ajuste para dark/light via prefers-color-scheme */
-      @media (prefers-color-scheme: dark) {
-        .glass {
-          background: rgba(17, 25, 40, 0.35);
-          border: 1px solid rgba(255, 255, 255, 0.18);
+      .link-card {
+        transform: translateZ(0);
+        transition:
+          transform 0.35s ease,
+          border-color 0.35s ease,
+          background-color 0.35s ease;
+      }
+
+      .link-card:hover {
+        transform: translate3d(0, -3px, 0);
+        border-color: rgba(59, 130, 246, 0.5);
+        background: rgba(20, 35, 63, 0.68);
+      }
+
+      .link-card:focus-visible {
+        outline: 2px solid #3b82f6;
+        outline-offset: 2px;
+      }
+
+      .pulse-promo {
+        animation: pulsePromo 3.6s ease-in-out infinite;
+      }
+
+      @keyframes pulsePromo {
+        0%,
+        100% {
+          transform: scale(1);
+          filter: drop-shadow(0 0 0 rgba(56, 189, 248, 0.2));
         }
-        .glass:hover {
-          background: rgba(17, 25, 40, 0.45);
+        50% {
+          transform: scale(1.06);
+          filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.45));
         }
       }
-      @media (prefers-color-scheme: light) {
-        .glass {
-          background: rgba(255, 255, 255, 0.5);
-          border: 1px solid rgba(200, 200, 200, 0.45);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12),
-            inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+      @media (max-width: 640px) {
+        .gaussian-orb {
+          width: 18rem;
+          height: 18rem;
         }
-        .glass:hover {
-          background: rgba(255, 255, 255, 0.6);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        body,
+        .pulse-promo {
+          animation: none;
+        }
+
+        .reveal,
+        .link-card {
+          transition: none;
         }
       }
     </style>
   </head>
-  <body
-    class="bg-white dark:bg-black min-h-screen flex items-center justify-center p-4 font-sans text-gray-900 dark:text-white relative"
-  >
-    <div>
-      <div class="wave"></div>
-      <div class="wave"></div>
-      <div class="wave"></div>
-    </div>
+  <body class="grain relative overflow-x-hidden text-white antialiased">
+    <div class="gaussian-orb orb-a" data-parallax="14"></div>
+    <div class="gaussian-orb orb-b" data-parallax="10"></div>
 
-    <div class="w-full max-w-md">
-      <!-- Profile -->
-      <div class="flex flex-col items-center text-center space-y-4 mb-8">
-        <img
-          src="../assets/avatar-hero.png"
-          alt="Profile"
-          class="w-32 h-32 rounded-full border-4 border-white dark:border-gray-800 shadow-lg"
-        />
-        <h1 class="text-2xl font-bold">Felipe Cavalari</h1>
-        <p class="text-gray-600 dark:text-white">Software Developer</p>
-      </div>
+    <main
+      class="relative z-10 mx-auto flex min-h-screen w-full max-w-3xl items-center px-4 py-12 sm:px-6"
+    >
+      <section
+        aria-labelledby="profile-name"
+        class="card-glass relative w-full overflow-hidden rounded-3xl p-5 sm:p-8 shadow-cinema"
+      >
+        <div
+          class="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-sky-300/15 to-transparent"
+        ></div>
 
-      <!-- Links -->
-      <div id="link-list" class="flex flex-col space-y-3">
-        <a
-          href="https://felipecavalari.com.br/"
-          target="_blank"
-          class="glass flex items-center justify-center gap-2 w-full py-3 bg-white/10 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-2xl text-center text-lg font-medium shadow-md transition"
-        >
-          <i class="fa-solid fa-link text-3xl"></i>
-          <span>Meu portfólio</span>
-        </a>
-        <a
-          href="https://www.instagram.com/cavalari67/"
-          target="_blank"
-          class="glass flex items-center justify-center gap-2 w-full py-3 bg-white/10 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-2xl text-center text-lg font-medium shadow-md transition"
-        >
-          <i class="fa-brands fa-instagram text-3xl text-[#e600d3]"></i>
-          <span>Instagram</span>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/felipe-cavalari/"
-          target="_blank"
-          class="glass flex items-center justify-center gap-2 w-full py-3 bg-white/10 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-2xl text-center text-lg font-medium shadow-md transition"
-        >
-          <i class="fa-brands fa-linkedin text-3xl text-[#0a66c2]"></i>
-          <span>Linkedin</span>
-        </a>
-        <a
-          href="https://github.com/Felipe-Cavalari"
-          target="_blank"
-          class="glass flex items-center justify-center gap-2 w-full py-3 bg-white/10 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-2xl text-center text-lg font-medium shadow-md transition"
-        >
-          <i class="fa-brands fa-github text-3xl"></i>
-          <span>Github</span>
-        </a>
-        <a
-          href="mailto:fecavalaridev@gmail.com"
-          target="_blank"
-          class="glass flex items-center justify-center gap-2 w-full py-3 bg-white/10 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-2xl text-center text-lg font-medium shadow-md transition"
-        >
-          <i class="fa-solid fa-envelope text-3xl"></i>
-          <span>Email</span>
-        </a>
-        <a
-          href="https://solar-gemini-1b9.notion.site/Wsl-config-24ce3f371d228041a235e781301a1212"
-          target="_blank"
-          class="glass flex items-center justify-center gap-2 w-full py-3 bg-white/10 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-2xl text-center text-lg font-medium shadow-md transition"
-          id=""
-        >
-          <i class="fa-brands fa-linux text-3xl text-black"></i>
-          <span>Ambiente WSL</span>
-        </a>
-        <a
-          href="https://solar-gemini-1b9.notion.site/1-Introdu-o-completa-ao-Docker-267e3f371d2280808370de8ce37d1ed0"
-          target="_blank"
-          class="glass flex items-center justify-center gap-2 w-full py-3 bg-white/10 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-2xl text-center text-lg font-medium shadow-md transition"
-          id="promo"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="#008fe2"
-            class="size-10"
+        <header class="reveal mb-8 flex flex-col items-center text-center">
+          <div
+            class="mb-4 rounded-full border border-slate-300/30 p-1 shadow-soft"
           >
-            <path
-              d="M13.98 11.08h2.12a.19.19 0 0 0 .19-.19V9.01a.19.19 0 0 0-.19-.19h-2.12a.18.18 0 0 0-.18.18v1.9c0 .1.08.18.18.18m-2.95-5.43h2.12a.19.19 0 0 0 .18-.19V3.57a.19.19 0 0 0-.18-.18h-2.12a.18.18 0 0 0-.19.18v1.9c0 .1.09.18.19.18m0 2.71h2.12a.19.19 0 0 0 .18-.18V6.29a.19.19 0 0 0-.18-.18h-2.12a.18.18 0 0 0-.19.18v1.89c0 .1.09.18.19.18m-2.93 0h2.12a.19.19 0 0 0 .18-.18V6.29a.18.18 0 0 0-.18-.18H8.1a.18.18 0 0 0-.18.18v1.89c0 .1.08.18.18.18m-2.96 0h2.11a.19.19 0 0 0 .19-.18V6.29a.18.18 0 0 0-.19-.18H5.14a.19.19 0 0 0-.19.18v1.89c0 .1.08.18.19.18m5.89 2.72h2.12a.19.19 0 0 0 .18-.19V9.01a.19.19 0 0 0-.18-.19h-2.12a.18.18 0 0 0-.19.18v1.9c0 .1.09.18.19.18m-2.93 0h2.12a.18.18 0 0 0 .18-.19V9.01a.18.18 0 0 0-.18-.19H8.1a.18.18 0 0 0-.18.18v1.9c0 .1.08.18.18.18m-2.96 0h2.11a.18.18 0 0 0 .19-.19V9.01a.18.18 0 0 0-.18-.19H5.14a.19.19 0 0 0-.19.19v1.88c0 .1.08.19.19.19m-2.92 0h2.12a.18.18 0 0 0 .18-.19V9.01a.18.18 0 0 0-.18-.19H2.22a.18.18 0 0 0-.19.18v1.9c0 .1.08.18.19.18m21.54-1.19c-.06-.05-.67-.51-1.95-.51-.34 0-.68.03-1.01.09a3.77 3.77 0 0 0-1.72-2.57l-.34-.2-.23.33a4.6 4.6 0 0 0-.6 1.43c-.24.97-.1 1.88.4 2.66a4.7 4.7 0 0 1-1.75.42H.76a.75.75 0 0 0-.76.75 11.38 11.38 0 0 0 .7 4.06 6.03 6.03 0 0 0 2.4 3.12c1.18.73 3.1 1.14 5.28 1.14.98 0 1.96-.08 2.93-.26a12.25 12.25 0 0 0 3.82-1.4 10.5 10.5 0 0 0 2.61-2.13c1.25-1.42 2-3 2.55-4.4h.23c1.37 0 2.21-.55 2.68-1 .3-.3.55-.66.7-1.06l.1-.28Z"
+            <img
+              src="../assets/avatar-hero.png"
+              alt="Foto de perfil de Felipe Cavalari"
+              class="h-28 w-28 rounded-full object-cover sm:h-32 sm:w-32"
             />
-          </svg>
+          </div>
+          <h1
+            id="profile-name"
+            class="text-3xl font-bold tracking-tight sm:text-4xl"
+          >
+            Felipe Cavalari
+          </h1>
+          <p
+            class="mt-2 text-sm font-medium uppercase tracking-[0.24em] text-slate-300 sm:text-base"
+          >
+            Software Developer
+          </p>
+        </header>
 
-          <span>Introdução ao Docker</span>
-        </a>
-      </div>
+        <nav aria-label="Links principais" class="space-y-3 sm:space-y-3.5">
+          <a
+            href="https://felipecavalari.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-card reveal card-glass flex w-full items-center justify-between rounded-2xl px-4 py-4"
+          >
+            <span class="flex items-center gap-3 text-lg font-medium">
+              <i class="fa-solid fa-link text-2xl"></i>
+              Meu portfólio
+            </span>
+            <i
+              class="fa-solid fa-arrow-up-right-from-square text-sm text-slate-300"
+            ></i>
+          </a>
 
-      <!-- Messages -->
-      <div id="messages" class="mt-6 space-y-3"></div>
-    </div>
+          <a
+            href="https://www.instagram.com/cavalari67/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-card reveal card-glass flex w-full items-center justify-between rounded-2xl px-4 py-4"
+          >
+            <span class="flex items-center gap-3 text-lg font-medium">
+              <i class="fa-brands fa-instagram text-2xl text-[#e600d3]"></i>
+              Instagram
+            </span>
+            <i
+              class="fa-solid fa-arrow-up-right-from-square text-sm text-slate-300"
+            ></i>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/felipe-cavalari/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-card reveal card-glass flex w-full items-center justify-between rounded-2xl px-4 py-4"
+          >
+            <span class="flex items-center gap-3 text-lg font-medium">
+              <i class="fa-brands fa-linkedin text-2xl text-[#0a66c2]"></i>
+              Linkedin
+            </span>
+            <i
+              class="fa-solid fa-arrow-up-right-from-square text-sm text-slate-300"
+            ></i>
+          </a>
+
+          <a
+            href="https://github.com/Felipe-Cavalari"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-card reveal card-glass flex w-full items-center justify-between rounded-2xl px-4 py-4"
+          >
+            <span class="flex items-center gap-3 text-lg font-medium">
+              <i class="fa-brands fa-github text-2xl"></i>
+              Github
+            </span>
+            <i
+              class="fa-solid fa-arrow-up-right-from-square text-sm text-slate-300"
+            ></i>
+          </a>
+
+          <a
+            href="mailto:fecavalaridev@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-card reveal card-glass flex w-full items-center justify-between rounded-2xl px-4 py-4"
+          >
+            <span class="flex items-center gap-3 text-lg font-medium">
+              <i class="fa-solid fa-envelope text-2xl"></i>
+              Email
+            </span>
+            <i
+              class="fa-solid fa-arrow-up-right-from-square text-sm text-slate-300"
+            ></i>
+          </a>
+        </nav>
+      </section>
+    </main>
 
     <script>
-      lucide.createIcons();
+      const htmlEl = document.documentElement;
+      const revealElements = document.querySelectorAll(".reveal");
+      const parallaxNodes = document.querySelectorAll("[data-parallax]");
 
-      // Detect system theme, fallback to dark
       function applyTheme() {
         const prefersDark =
           window.matchMedia &&
           window.matchMedia("(prefers-color-scheme: dark)").matches;
-        if (prefersDark) {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
-      }
-      try {
-        applyTheme();
-      } catch {
-        document.documentElement.classList.add("dark");
+        htmlEl.classList.toggle("dark", prefersDark);
       }
 
-      const el = document.getElementById("promo");
-      let start = null;
+      applyTheme();
 
-      function bounceSmooth(timestamp) {
-        if (!start) start = timestamp;
-        const progress = (timestamp - start) / 500; // em segundos
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          rootMargin: "0px 0px -8% 0px",
+          threshold: 0.08,
+        },
+      );
 
-        // scale varia entre 1.0 e 1.2 em um ciclo suave (senóide)
-        const scale = 1 + 0.1 * Math.sin(progress * 2);
-        // progress*2 → controla a velocidade (quanto maior, mais rápido)
+      revealElements.forEach((element, index) => {
+        element.style.transitionDelay = `${Math.min(index * 55, 360)}ms`;
+        observer.observe(element);
+      });
 
-        el.style.transform = `scale(${scale})`;
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        let rafId = null;
+        let pointerX = window.innerWidth / 2;
+        let pointerY = window.innerHeight / 2;
+        let currentX = pointerX;
+        let currentY = pointerY;
 
-        requestAnimationFrame(bounceSmooth);
+        const updateParallax = () => {
+          currentX += (pointerX - currentX) * 0.08;
+          currentY += (pointerY - currentY) * 0.08;
+
+          const centeredX = currentX / window.innerWidth - 0.5;
+          const centeredY = currentY / window.innerHeight - 0.5;
+
+          parallaxNodes.forEach((node) => {
+            const depth = Number(node.getAttribute("data-parallax")) || 10;
+            node.style.setProperty("--tx", `${centeredX * depth * 2}px`);
+            node.style.setProperty("--ty", `${centeredY * depth * 2}px`);
+          });
+
+          rafId = requestAnimationFrame(updateParallax);
+        };
+
+        window.addEventListener(
+          "pointermove",
+          (event) => {
+            pointerX = event.clientX;
+            pointerY = event.clientY;
+          },
+          { passive: true },
+        );
+
+        rafId = requestAnimationFrame(updateParallax);
+
+        window.addEventListener("beforeunload", () => {
+          if (rafId) {
+            cancelAnimationFrame(rafId);
+          }
+        });
       }
-
-      requestAnimationFrame(bounceSmooth);
     </script>
   </body>
 </html>
