@@ -22,7 +22,10 @@
 .section-title {
   font-size: 3rem;
   font-weight: 700;
-  color: var(--accent);
+  background: linear-gradient(135deg, #e2e8f0 10%, #3b82f6 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 1rem;
 }
 

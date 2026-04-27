@@ -60,6 +60,11 @@
     <!-- Mouse Spotlight Effect -->
     <div class="blur-spotlight"></div>
 
+    <!-- Aurora background orbs (fixed, full-page) -->
+    <div class="aurora-orb aurora-orb-1" aria-hidden="true"></div>
+    <div class="aurora-orb aurora-orb-2" aria-hidden="true"></div>
+    <div class="aurora-orb aurora-orb-3" aria-hidden="true"></div>
+
     <!-- Navbar -->
     <header class="navbar" id="navbar">
       <div class="navbar-container">
@@ -99,11 +104,19 @@
       <div class="hero-container">
         <!-- Hero Image -->
         <div class="hero-image-wrapper">
-          <img
-            src="./assets/avatar-hero-1.png"
-            alt="Felipe Cavalari"
-            class="hero-image"
-          />
+          <div class="avatar-wrap">
+            <div class="avatar-glow" aria-hidden="true"></div>
+            <div class="avatar-ring" aria-hidden="true"></div>
+            <div class="avatar-mask">
+              <img
+                src="./assets/avatar-hero-1.png"
+                alt="Felipe Cavalari"
+                class="hero-image"
+                width="290"
+                height="290"
+              />
+            </div>
+          </div>
         </div>
 
         <!-- Hero Content -->

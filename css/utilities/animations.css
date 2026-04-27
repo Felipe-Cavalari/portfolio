@@ -4,8 +4,44 @@
 
 /* Pulse dot animation (hero badge) */
 @keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.2); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5); }
+  60% { box-shadow: 0 0 0 7px rgba(34, 197, 94, 0); }
+}
+
+/* Avatar rotating ring */
+@keyframes avatarSpinRing {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Avatar ambient glow pulse */
+@keyframes avatarGlowPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.1); }
+}
+
+/* Aurora orb drift animations */
+@keyframes auroraOrb1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(-28px, 22px) scale(1.06); }
+  66%       { transform: translate(18px, -16px) scale(0.94); }
+}
+
+@keyframes auroraOrb2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(24px, -28px) scale(1.1); }
+  66%       { transform: translate(-18px, 24px) scale(0.9); }
+}
+
+@keyframes auroraOrb3 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+  50%       { transform: translate(-36px, 28px) scale(1.25); opacity: 0.4; }
+}
+
+/* Card shimmer sweep */
+@keyframes shimmerSweep {
+  from { left: -100%; }
+  to   { left: 160%; }
 }
 
 /* Typewriter cursor */
@@ -19,6 +55,49 @@
 @keyframes blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
+}
+
+/* Aurora orbs (full-page, fixed) */
+.aurora-orb {
+  position: fixed;
+  border-radius: 9999px;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+
+.aurora-orb-1 {
+  width: 520px;
+  height: 520px;
+  top: -140px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.28) 0%, rgba(59, 130, 246, 0) 70%);
+  animation: auroraOrb1 22s ease-in-out infinite;
+}
+
+.aurora-orb-2 {
+  width: 640px;
+  height: 640px;
+  bottom: -200px;
+  left: -120px;
+  background: radial-gradient(circle, rgba(28, 68, 133, 0.36) 0%, rgba(28, 68, 133, 0) 70%);
+  animation: auroraOrb2 28s ease-in-out infinite;
+}
+
+.aurora-orb-3 {
+  width: 380px;
+  height: 380px;
+  top: 42%;
+  left: 28%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.14) 0%, rgba(99, 102, 241, 0) 70%);
+  animation: auroraOrb3 19s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .aurora-orb-1 { width: 300px; height: 300px; }
+  .aurora-orb-2 { width: 380px; height: 380px; }
+  .aurora-orb-3 { display: none; }
 }
 
 /* Mouse spotlight effect */
@@ -111,4 +190,14 @@
   50% { opacity: 0.7; }
   75% { transform: rotate(90deg); }
   80% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
