@@ -578,6 +578,50 @@
         }
       }
 
+      /* ── Featured card (Terminal de Respeito) ── */
+      .link-card-featured {
+        border-color: rgba(132, 204, 22, 0.45) !important;
+        box-shadow:
+          0 0 0 1px rgba(132, 204, 22, 0.25),
+          0 0 20px rgba(132, 204, 22, 0.18),
+          0 0 44px rgba(132, 204, 22, 0.07),
+          0 4px 20px rgba(0, 0, 0, 0.3);
+        animation: bounceCard 2.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+      }
+
+      .link-card-featured:hover {
+        animation-play-state: paused;
+        border-color: rgba(132, 204, 22, 0.72) !important;
+        box-shadow:
+          0 0 0 2px rgba(132, 204, 22, 0.45),
+          0 0 32px rgba(132, 204, 22, 0.32),
+          0 4px 24px rgba(0, 0, 0, 0.4) !important;
+      }
+
+      @keyframes bounceCard {
+        0%, 100% {
+          transform: translateY(0);
+          box-shadow:
+            0 0 0 1px rgba(132, 204, 22, 0.25),
+            0 0 20px rgba(132, 204, 22, 0.18),
+            0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        35% {
+          transform: translateY(-6px);
+          box-shadow:
+            0 0 0 1.5px rgba(132, 204, 22, 0.5),
+            0 0 30px rgba(132, 204, 22, 0.3),
+            0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+        65% {
+          transform: translateY(-2px);
+          box-shadow:
+            0 0 0 1px rgba(132, 204, 22, 0.38),
+            0 0 24px rgba(132, 204, 22, 0.22),
+            0 6px 24px rgba(0, 0, 0, 0.35);
+        }
+      }
+
       /* ── Reduced motion ── */
       @media (prefers-reduced-motion: reduce) {
         *,
@@ -899,6 +943,59 @@
               <div>
                 <div class="text-sm font-semibold text-slate-100">GitHub</div>
                 <div class="text-xs text-slate-500">Felipe-Cavalari</div>
+              </div>
+            </div>
+            <svg
+              class="card-arrow"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              width="15"
+              height="15"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+
+          <!-- Terminal de Respeito -->
+          <a
+            href="https://github.com/Felipe-Cavalari/wsl-setup"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-card link-card-featured reveal"
+            style="--accent-col: #84cc16"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="icon-badge"
+                style="background: rgba(132, 204, 22, 0.12)"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#84cc16"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  width="18"
+                  height="18"
+                  aria-hidden="true"
+                >
+                  <polyline points="4 17 10 11 4 5" />
+                  <line x1="12" y1="19" x2="20" y2="19" />
+                </svg>
+              </div>
+              <div>
+                <div class="text-sm font-semibold text-slate-100">
+                  Terminal de Respeito
+                </div>
+                <div class="text-xs text-slate-500">wsl-setup</div>
               </div>
             </div>
             <svg
