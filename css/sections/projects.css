@@ -1,8 +1,127 @@
 /* ============================================
-   Projects Section
+   Work / Selected Projects Section
    ============================================ */
-.projects-grid {
+.work {
+  position: relative;
+  z-index: 2;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--section-padding) var(--section-inline);
+}
+
+.work-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(64px, 10vh, 140px);
+}
+
+.work-case {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(24px, 4vw, 64px);
+  align-items: center;
+}
+
+.work-case--flip .work-media {
+  order: 2;
+}
+
+.work-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-card);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.4s ease;
+}
+
+.work-media:hover {
+  border-color: color-mix(in oklab, var(--accent) 45%, transparent);
+}
+
+.work-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.work-media--placeholder {
+  background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-media--placeholder span {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.12em;
+  color: var(--text-faintest);
+  text-align: center;
+  padding: 0 24px;
+}
+
+.work-media--pending {
+  border: 1px dashed rgba(255, 255, 255, 0.14);
+  background-image: none;
+}
+
+.work-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.work-case-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+}
+
+.work-title {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.work-desc {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  font-size: 15.5px;
+  max-width: 44ch;
+}
+
+.work-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.work-tag {
+  padding: 6px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+}
+
+.work-tag--muted {
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-faintest);
+}
+
+.work-pending-meta {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--text-faintest);
 }

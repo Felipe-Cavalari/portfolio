@@ -1,110 +1,28 @@
 /* ============================================
    Responsive Design
+   ============================================
+   Most layout already scales via clamp() and
+   auto-fit grids; these rules cover the few
+   spots that need an explicit breakpoint.
    ============================================ */
-@media (max-width: 1024px) {
-  .hero-container {
+
+@media (max-width: 560px) {
+  .stack-layer {
     grid-template-columns: 1fr;
-    text-align: center;
-    gap: 2rem;
+    gap: 6px;
   }
 
-  .hero-content {
-    align-items: center;
-  }
-
-  .hero-description {
-    max-width: 100%;
-  }
-
-  .hero-cta {
-    justify-content: center;
-  }
-
-  .avatar-wrap {
-    width: 230px;
-    height: 230px;
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar-links {
+  .stack-dot {
     display: none;
-  }
-
-  .mobile-menu-toggle {
-    display: flex;
-  }
-
-  .hero {
-    padding: 4rem 1.5rem;
-  }
-
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.25rem;
-  }
-
-  .avatar-wrap {
-    width: 200px;
-    height: 200px;
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .expertise-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-cta {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .btn-primary,
-  .btn-secondary {
-    width: 100%;
-    justify-content: center;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-title {
-    font-size: 2rem;
+  .hero {
+    padding: 120px 20px 40px;
   }
 
-  .avatar-wrap {
-    width: 180px;
-    height: 180px;
-  }
-
-  .hero-social {
+  .contact-socials {
     flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .section {
-    padding: 3rem 1rem;
-  }
-
-  .section-title {
-    font-size: 1.75rem;
   }
 }

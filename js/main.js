@@ -6,28 +6,41 @@
 // ============================================
 
 // Components
-import { initMarquee } from './components/marquee.js';
-import { typeWriter } from './components/typewriter.js';
 import { initNavbarScroll, initMobileMenu } from './components/navbar.js';
+import { initTerminal } from './components/terminal.js';
+import { initGraph } from './components/graph.js';
+import { initLangSwitch } from './components/lang-switch.js';
+import { initContactForm } from './components/contact-form.js';
 
 // Effects
-import { initScrollReveal } from './effects/scroll-reveal.js';
-import { initSpotlight } from './effects/spotlight.js';
-import { initSmoothScroll } from './effects/smooth-scroll.js';
-import { initGSAPAnimations } from './effects/gsap-animations.js';
+import { initReveals, initWords } from './effects/reveal.js';
+import { initNetCanvas } from './effects/net-canvas.js';
+import { initMagnets } from './effects/magnets.js';
+import { initParallax } from './effects/parallax.js';
+import { initTilt } from './effects/tilt.js';
+import { initScrollProgress } from './effects/scroll-progress.js';
 
 // ============================================
 // Initialize Everything
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
-  initMarquee();
+  const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#3B82F6';
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   initNavbarScroll();
   initMobileMenu();
-  initScrollReveal();
-  initSpotlight();
-  initSmoothScroll();
-  initGSAPAnimations();
-  
-  // Start typewriter after a short delay
-  setTimeout(typeWriter, 1000);
+  initLangSwitch();
+  initTerminal();
+  initGraph(accent);
+  initContactForm();
+  initReveals();
+  initWords();
+
+  if (!reduceMotion) {
+    initNetCanvas(accent);
+    initMagnets();
+    initParallax();
+    initScrollProgress(accent);
+    initTilt();
+  }
 });

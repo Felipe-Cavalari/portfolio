@@ -13,14 +13,15 @@
 /* Components */
 @import './components/navbar.css';
 @import './components/buttons.css';
-@import './components/cards.css';
-@import './components/code-window.css';
+@import './components/terminal.css';
 
 /* Sections */
 @import './sections/hero.css';
-@import './sections/about.css';
-@import './sections/skills.css';
+@import './sections/identity.css';
+@import './sections/stack.css';
+@import './sections/expertise.css';
 @import './sections/projects.css';
+@import './sections/process.css';
 @import './sections/contact.css';
 @import './sections/footer.css';
 

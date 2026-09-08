@@ -2,11 +2,31 @@
    Typography
    ============================================ */
 
-/* Fonts */
-.font-futurism {
-  font-family: "futurism", sans-serif;
+.font-mono {
+  font-family: var(--font-mono);
 }
 
-.font-mono {
-  font-family: 'JetBrains Mono', monospace;
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.eyebrow-index {
+  color: var(--accent);
+}
+
+.eyebrow-rule {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.16), transparent);
+}
+
+.eyebrow-note {
+  color: var(--text-faint);
 }

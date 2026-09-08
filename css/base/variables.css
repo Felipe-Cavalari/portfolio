@@ -1,37 +1,39 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
-
-@font-face {
-  font-family: "futurism";
-  src: url("../../fonts/futurism.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
 
 /* ============================================
    Design Tokens & CSS Variables
    ============================================ */
 :root {
-  /* Colors - Mantendo as cores do dark mode original */
-  --bg-primary: #0F172A;
-  --bg-secondary: #10192e;
-  --bg-card: rgba(40, 50, 65, 0.4);
-  --border-color: #283241;
-  --accent: #3B82F6;
-  --accent-hover: #2563EB;
-  --text-primary: #F1F5F9;
-  --text-secondary: #CBD5E1;
-  --text-muted: #94A3B8;
-  
+  /* Colors */
+  --bg-primary: #08090b;
+  --bg-alt: #0a0c0e;
+  --bg-card: #0b0d10;
+  --bg-card-hover: #0e1116;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --accent: #3b82f6;
+  --accent-2: #8fbeff;
+  --text-primary: #e9eaec;
+  --text-secondary: #a9aeb6;
+  --text-muted: #8a8f98;
+  --text-dim: #6d7280;
+  --text-faint: #4e535a;
+  --text-faintest: #5b6067;
+
+  /* Fonts */
+  --font-body: "Space Grotesk", Helvetica, Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
   /* Spacing */
-  --section-padding: 5rem;
-  --container-max: 1200px;
-  
+  --section-padding: clamp(60px, 9vh, 120px);
+  --section-padding-lg: clamp(90px, 13vh, 180px);
+  --section-inline: clamp(20px, 5vw, 88px);
+  --container-max: 1440px;
+
   /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
-  
+
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
